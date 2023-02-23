@@ -1,1 +1,70 @@
-<p>login works!</p>
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Prueba técnica de login para MNEMO">
+        <meta name="author" content="Montse Barrionuevo">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prueba técnica - MNEMO</title>
+    </head>
+    <body>
+        <main role="main" class="container-main">
+            <div role="generic" class="container-login">
+                <div role="generic" class="container-header">
+                    <header role="generic">
+                        <article role="article" class="header-login">
+                            <div role="generic" class="img-login">
+                                <img src="assets/images/cat-login.jpg" alt="imagen gato cabecera login">
+                            </div>
+                            <div role="generic" class="container-h1">
+                                <h1 class="login-title">Prueba técnica</h1>
+                            </div>
+                        </article>
+                    </header>
+                </div>
+                <div role="generic" class="login-form">
+                    <form role="form" [formGroup]="loginForm" class="loginForm" (ngSubmit)="onSubmit()" novalidate>
+                        <fieldset role="group" id="form-group">
+                            <div role="generic" class="div-form-input row --email">
+                                <label for="email" class="form-input-label"></label>
+                                <div class="input-wrapper">
+                                    <input type="email" role="textbox" class="form-input" name="email" formControlName="email" placeholder="Email" autocomplete>
+                                    <img src="assets/images/icon-person.svg" class="input-icon">                                    
+                                </div>
+                                <div>
+                                    <span *ngIf="submitted && loginForm.get('email').errors?.required" class="form-errors">Este campo es obligatorio</span>
+                                    <span *ngIf="submitted && loginForm.get('email').errors?.email" class="form-errors">Esto no es un correo</span>
+                                </div>
+                            </div>
+                            <div role="generic" class="div-form-input row --password">
+                                <label for="password" class="form-input-label"></label>
+                                <div class="input-wrapper">
+                                    <input type="password" role="textbox" class="form-input" name="password" formControlName="password" placeholder="Contraseña" autocomplete>
+                                    <img src="assets/images/icon-lock.svg" class="input-icon">                                    
+                                </div>
+                                <div>
+                                    <span *ngIf="submitted && loginForm.get('password').errors?.required" class="form-errors">Este campo es obligatorio</span>
+                                    <span *ngIf="submitted && loginForm.get('password').errors?.minlength" class="form-errors">El password tiene que contener al menos 5 caracteres.</span>
+                                </div>
+                            </div>    
+                            <div role="generic" class="div-form-reminder row --reminder">
+                                <div class="col">
+                                    <label for="reminderLogin" class="form-check-label">Recordar</label>
+                                </div>
+                                <div class="col">
+                                    <label class="switch">
+                                        <input type="checkbox" role="checkbox" class="form-reminder" name="reminderLogin" formControlName="reminderLogin" />
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>          
+                            <div role="generic" class="div-form-button row --button">
+                                <button type="submit" role="button" class="form-button">Acceder</button>
+                            </div>            
+                        </fieldset>        
+                    </form>  
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

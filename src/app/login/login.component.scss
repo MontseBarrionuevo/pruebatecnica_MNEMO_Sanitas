@@ -1,0 +1,206 @@
+@import '../../styles/partials/vars.scss';
+@import '../../styles/partials/mixin.scss';
+
+.container-main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  height: 100vh;
+  @include mediaQuery(960px){
+    justify-content: flex-start;
+    margin-top: 15px;
+  }
+}
+.container-login{    
+  background-color: $blanco;
+  width: 50vh;
+  padding: 2%;
+  @include mediaQuery(960px){
+    background-color: transparent;
+    width: 75vh;
+  }
+}
+.header-login, .img-login{
+  text-align: center;
+}
+.img-login img{
+  max-width: 150px;
+}
+.img-login{
+  margin-bottom: 0;
+  @include mediaQuery(960px){
+    margin-bottom: 20px;
+  }
+}
+.container-h1{
+  display: block;
+  @include mediaQuery(960px){
+    display: none;
+  }
+}
+.login-form {
+  @include mediaQuery(960px){
+    background-color: $blanco;
+  }
+}
+#form-group {
+  border: 0;
+  @include mediaQuery(960px){
+    padding: 0;
+    margin: 0;
+  }
+}
+.div-form-input{
+  margin-bottom: 5%;
+}
+.--email{
+  @include mediaQuery(960px){
+    margin-top: 10px;
+  }
+}
+.input-wrapper {
+  position: relative;
+  width: 100%; 
+  @include mediaQuery(960px){
+    width: 90%;
+  }
+}  
+.form-input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid $grisMedio;
+  border-radius: 0;
+  outline: none;
+  height: 3rem;
+  width: 100%;
+  margin: 0 0 8px 0;
+  padding: 0 0 0 35px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-box-sizing: content-box;
+  box-sizing: border-box;
+  -webkit-transition: border .3s, -webkit-box-shadow .3s;
+  transition: border .3s, -webkit-box-shadow .3s;
+  transition: box-shadow .3s, border .3s;
+  transition: box-shadow .3s, border .3s, -webkit-box-shadow .3s;
+  @include mediaQuery(960px){
+    margin: 0 0 8px 15px;
+    padding: 0 0 0 30px;
+  }
+  &:focus{
+    outline: none;
+  }
+} 
+.input-icon {
+  color: $grisMedio;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  left: 0;
+  top: 40%;
+  transform: translateY(-50%);
+  @include mediaQuery(960px){
+    left: 15px;
+  }
+} 
+.form-errors{
+  margin-top: 10px;
+  color: $rojo;
+  @include mediaQuery(960px){
+    margin-left: 15px;
+  }
+}
+.div-form-reminder{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  font-weight: bold;
+  @include mediaQuery (960px){
+    margin: 0 15px;
+  }
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 18px;
+} 
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}  
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 4px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 34px;
+  background-color: $grisClaro;
+  -webkit-transition: .4s;
+  transition: .4s;
+  &:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 0;
+    bottom: -4px;
+    border-radius: 50%;
+    background-color: $gris;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+}  
+input:checked + .slider {
+  background-color: $verdeClaro;
+}  
+input:focus + .slider {
+  box-shadow: 0 0 1px $verdeClaro;
+}  
+input:checked + .slider:before {
+  background-color: $verde;
+  -webkit-transform: translateX(28px);
+  -ms-transform: translateX(28px);
+  transform: translateX(28px);
+}
+.div-form-button{
+  text-align: center;
+  margin-top:5%;
+}
+.form-button{
+  background-color: $blanco; 
+  padding: 10px 24px;
+  margin: 4px 2px;
+  color: $negro; 
+  border: 2px solid $azulClaro;
+  border-radius: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.3em;
+  font-weight: bold;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  @include mediaQuery(960px){
+    width: 100%;
+    background-color: $azulClaro;
+    color: $blanco;
+    border-radius: 0px;
+    margin: 0;
+  }
+  &:hover{
+    background-color: $azulClaro;
+    color: $blanco;
+    @include mediaQuery(960px){
+      background-color: $blanco;
+      color: $negro;
+    }
+  }
+}
