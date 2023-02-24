@@ -238,7 +238,7 @@ describe('LoginComponent', () => {
     expect(fnc).toHaveBeenCalledWith('Hay errores en el formulario');
   });
 
-  it('should not display console log when onSubmit is called but isFormValid returns true', () => {
+  it('should display console log when onSubmit is called but isFormValid returns true', () => {
     const dummyData = {
       email: 'test@gmail.com',
       password: 'test',
